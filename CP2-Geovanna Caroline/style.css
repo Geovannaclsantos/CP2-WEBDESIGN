@@ -1,0 +1,235 @@
+:root{
+  --azul-escuro: #202832;
+  --cinza: #DBDBDB;
+  --branco: #FFF;
+  --texto: #191919;
+}
+
+*{ box-sizing: border-box; }
+
+html, body{
+  margin: 0;
+  padding: 0;
+  background: var(--branco);
+  color: var(--texto);
+  font-family: "Montserrat", sans-serif;
+  line-height: 1.4;
+}
+
+img{ max-width: 100%; display: block; }
+
+.container{
+  width: 100%;
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+/* TÍTULOS */
+.section__title {
+  margin: 0 0 24px 0;
+  font-weight: 700;
+  font-size: 28px;
+  color: #fff;         
+  text-align: center;  
+}
+
+.section__title--dark {
+  margin: 0 0 24px 0;
+  font-weight: 700;
+  font-size: 28px;
+  color: #191919;   /* preto do padrão da página */
+  text-align: left; /* alinhamento à esquerda */
+}
+.btn--solid{
+  background: var(--cinza);
+  color: var(--texto);
+}
+
+.btn--ghost{
+  background: rgba(219, 219, 219, 0.7);
+  color: var(--texto);
+  border-color: rgba(25, 25, 25, 0.12);
+}
+
+.btn:hover{ opacity: 0.9; }
+
+/* =============== BANNER =============== */
+.banner{
+  background: var(--azul-escuro);
+  color: var(--branco);
+}
+
+.banner__content{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+  padding-block: 70px;
+}
+
+.banner__text{ max-width: 620px; }
+
+.banner__title{
+  margin: 0 0 12px 0;
+  font-size: 40px;
+  font-weight: 700;
+}
+
+.banner__subtitle{
+  margin: 0 0 20px 0;
+  font-weight: 300;
+}
+
+.banner__buttons{
+  display: flex;
+  gap: 12px;
+}
+
+.banner__img{
+  width: 45%;
+  border-radius: 40px;
+  object-fit: cover;
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+/* =============== PRODUTOS =============== */
+.produtos {
+  background: #202832;
+  padding-block: 40px;
+}
+
+.produtos__lista {
+  display: grid;
+  /* fixa 3 colunas por linha */
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px; /* espaçamento entre os cards */
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  justify-items: center;
+}
+
+.card {
+  width: 90%; /* deixa cada card um pouco menor dentro da coluna */
+  background: var(--cinza);
+  border-top-right-radius: 40px;
+  border-bottom-left-radius: 40px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+}
+
+.card__img {
+  width: 100%;
+  height: 150px; /* imagem menor */
+  object-fit: cover;
+}
+
+.card__body {
+  padding: 10px; /* menos espaço interno */
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--texto);
+}
+
+.card__info {
+  margin: 0;
+  color: var(--texto);
+  font-weight: 400;
+  font-size: 13px;
+}
+/* =============== DETALHES =============== */
+.detalhes{
+  background: #DBDBDB;
+  color: var(--branco);
+  padding-block: 40px;
+}
+
+.detalhes__grid{
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: 32px;
+}
+
+.detalhes__media{
+  flex: 1 1 48%;
+  margin: 0;
+}
+
+.detalhes__media img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-top-right-radius: 140px;
+}
+
+.detalhes__texto{
+  flex: 1 1 48%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.detalhes__desc{
+  margin: 0 0 16px 0;
+  font-weight: 300;
+}
+
+/* =============== RODAPÉ =============== */
+.footer{
+  background:#202832;
+  color: white;
+  padding-block: 32px;
+}
+
+.footer__grid{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+}
+
+.footer__title{
+  margin: 0 0 12px 0;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.footer__list{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.footer__text{ margin: 0; }
+
+/* =============== RESPONSIVIDADE =============== */
+@media (max-width: 900px){
+  .banner__content,
+  .detalhes__grid,
+  .footer__grid{
+    flex-direction: column;
+  }
+  .banner__img{
+    width: 100%;
+  }
+}
