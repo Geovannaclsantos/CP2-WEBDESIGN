@@ -111,7 +111,7 @@ img{ max-width: 100%; display: block; }
 }
 
 .card {
-  width: 90%; /* deixa cada card um pouco menor dentro da coluna */
+  width: 90%; 
   background: var(--cinza);
   border-top-right-radius: 40px;
   border-bottom-left-radius: 40px;
@@ -123,18 +123,17 @@ img{ max-width: 100%; display: block; }
   transition: transform 0.2s ease;
 }
 
-.card:hover {
-  transform: scale(1.03);
+.card__img {
+  width: 90%;          
+  height: 250px;       
+  object-fit: cover;  
+  border-top-right-radius: 40px;
+  margin-top: 10px;    
 }
 
-.card__img {
-  width: 100%;
-  height: 150px; /* imagem menor */
-  object-fit: cover;
-}
 
 .card__body {
-  padding: 10px; /* menos espaço interno */
+  padding: 10px;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -155,42 +154,54 @@ img{ max-width: 100%; display: block; }
   font-size: 13px;
 }
 /* =============== DETALHES =============== */
-.detalhes{
-  background: #DBDBDB;
-  color: var(--branco);
-  padding-block: 40px;
+.detalhes {
+  background: var(--branco);
+  color: var(--texto);
+  padding-block: 30px; /* era 40px, reduzi para aproximar mais do rodapé */
 }
 
-.detalhes__grid{
+.detalhes__grid {
   display: flex;
-  align-items: stretch;
+  align-items: center; /* centraliza verticalmente e aproxima imagem/texto */
   justify-content: space-between;
-  gap: 32px;
+  gap: 20px; /* antes era 32px – diminui a distância entre imagem e texto */
 }
 
-.detalhes__media{
-  flex: 1 1 48%;
+.detalhes__media {
+  flex: 1 1 45%;
   margin: 0;
 }
 
-.detalhes__media img{
+.detalhes__media img {
   width: 100%;
-  height: 100%;
+  height: auto;
   object-fit: cover;
   border-top-right-radius: 140px;
 }
 
-.detalhes__texto{
-  flex: 1 1 48%;
+.detalhes__texto {
+  flex: 1 1 50%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  gap: 20px; /* aproxima ainda mais os blocos de texto */
 }
 
-.detalhes__desc{
-  margin: 0 0 16px 0;
-  font-weight: 300;
+.section__title--dark {
+  color: #191919;
+  font-weight: 700;
+  font-size: 26px;
+  margin-bottom: 10px; /* menos espaço entre o título e o texto */
+  text-align: left;
 }
+
+.detalhes__desc--dark {
+  color: #191919;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
 
 /* =============== RODAPÉ =============== */
 .footer{
